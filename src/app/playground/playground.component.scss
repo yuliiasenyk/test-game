@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(10, 1fr);
-  gap: 5px; /* Adjust spacing between boxes as needed */
+  gap: 5px;
   width: fit-content;
 }
 

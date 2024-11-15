@@ -8,7 +8,6 @@ import {ScorePopupComponent} from '../score-popup/score-popup.component';
 import { EventEmitter } from '@angular/core';
 
 const gridArray: number[] = Array.from({ length: 100 });
-const itemsArrayDefault: PlaygroundItem[] = gridArray.map((_, i) => ({ state: BoxState.default, index: i }));
 
 export interface PlaygroundItem {
   state: BoxState;
@@ -32,7 +31,7 @@ export class Playground implements OnDestroy {
   private gameEnded = false;
   readonly dialog = inject(MatDialog);
 
-  itemsArray: PlaygroundItem[] = itemsArrayDefault;
+  itemsArray: PlaygroundItem[] = gridArray.map((_, i) => ({ state: BoxState.default, index: i }));
   caughtCount = 0;
   missedCount = 0;
 
@@ -111,12 +110,12 @@ export class Playground implements OnDestroy {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(ScorePopupComponent, {
-      height: '400px',
-      width: '600px',
+      height: '300px',
+      width: '500px',
       data: {you: this.caughtCount, bot: this.missedCount},
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe(() => {
       this.reset()
     });
   }
