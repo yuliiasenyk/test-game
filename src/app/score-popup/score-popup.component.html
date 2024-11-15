@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>Score</h2>
+
+<mat-dialog-content>
+
+  <p>you: <b>{{ data.you }}</b></p>
+  <p>bot: <b>{{ data.bot }}</b></p>
+  <h3 [style.color]="userWon ? 'green' : 'red'">{{userWon ? 'You won' : 'You lost'}}</h3>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button cdkFocusInitial (click)="dialogRef.close()">{{ userWon ? 'As Usual' : 'Fair enough' }}</button>
+</mat-dialog-actions>

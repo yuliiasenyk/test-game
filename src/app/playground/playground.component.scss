@@ -1,0 +1,13 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 5px; /* Adjust spacing between boxes as needed */
+  width: fit-content;
+}
+
+.count {
+  font-size: 30px;
+  color: #212195;
+  margin: 24px;
+}

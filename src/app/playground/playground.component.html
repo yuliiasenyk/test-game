@@ -1,0 +1,14 @@
+<div class="grid-container">
+  <playground-box
+    *ngFor="let item of itemsArray"
+    [state]="item.state"
+    (click)="itemClick(item)"
+  >
+  </playground-box>
+</div>
+
+<div class="count">
+  you: {{caughtCount}}
+  bot: {{missedCount}}
+</div>
+
